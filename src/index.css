@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #c2d4e5;
+    color: #333a5b;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+nav {
+    background-color: #65b2ef;
+    position: sticky;
+    top: 0;
+    height: 10vh;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333a5b;
+    font-size: 1.5em;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 2em;
+}
