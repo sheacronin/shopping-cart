@@ -36,3 +36,9 @@ h1 {
     margin: 20px auto;
     font-size: 2em;
 }
+
+#pokemart {
+    width: 80vw;
+    max-width: 600px;
+    margin-top: 20px;
+}
