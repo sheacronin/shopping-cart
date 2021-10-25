@@ -1,0 +1,24 @@
+#shop {
+    position: relative;
+    height: 2000px;
+}
+
+#cart-preview {
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+#num-of-items {
+    background-color: #bf433b;
+    color: #eeeef7;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
