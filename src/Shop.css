@@ -22,3 +22,20 @@
     top: 0;
     right: 0;
 }
+
+#checkout-btn {
+    display: block;
+    background-color: #3d75b9;
+    border: none;
+    color: #eeeef7;
+    height: 25px;
+    width: 80px;
+    border-radius: 5px;
+    transition: background-color 300ms;
+}
+
+#checkout-btn:hover {
+    cursor: pointer;
+    background-color: #275597;
+    font-weight: 800;
+}

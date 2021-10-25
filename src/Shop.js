@@ -15,6 +15,7 @@ const CartPreview = () => {
         <div id="cart-preview">
             <img src={bag} alt="A bag" />
             <div id="num-of-items">1</div>
+            <button id="checkout-btn">Checkout</button>
         </div>
     );
 };
