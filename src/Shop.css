@@ -4,8 +4,8 @@
 }
 
 #cart-preview {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 12vh;
     right: 20px;
 }
 

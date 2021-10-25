@@ -1,0 +1,22 @@
+nav {
+    background-color: #65b2ef;
+    position: fixed;
+    top: 0;
+    height: 10vh;
+    width: 100vw;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333a5b;
+    font-size: 1.5em;
+}

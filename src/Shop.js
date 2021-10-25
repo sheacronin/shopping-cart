@@ -3,10 +3,10 @@ import './Shop.css';
 
 const Shop = () => {
     return (
-        <div id="shop">
+        <section id="shop">
             <h1>Shop</h1>
             <CartPreview />
-        </div>
+        </section>
     );
 };
 

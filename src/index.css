@@ -10,30 +10,13 @@ body {
     text-align: center;
 }
 
-nav {
-    background-color: #65b2ef;
-    position: sticky;
-    top: 0;
-    height: 10vh;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333a5b;
-    font-size: 1.5em;
+section {
+    margin-top: 12vh;
 }
 
 h1 {
     text-align: center;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     font-size: 2em;
 }
 
