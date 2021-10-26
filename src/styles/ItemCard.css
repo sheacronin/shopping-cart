@@ -29,11 +29,11 @@
     color: #eeeef7;
 }
 
-.increment {
+.decrement {
     border-radius: 5px 0 0 5px;
 }
 
-.decrement {
+.increment {
     border-radius: 0 5px 5px 0;
 }
 
