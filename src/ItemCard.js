@@ -17,10 +17,23 @@ const ItemCard = (props) => {
         console.log(data);
     };
 
+    const formatName = (name) => {
+        const words = name.split('-');
+        const capitalizedWords = [];
+
+        words.forEach((word) => {
+            let capitalizedWord = word[0].toUpperCase();
+            capitalizedWord += word.slice(1);
+            capitalizedWords.push(capitalizedWord);
+        });
+
+        return capitalizedWords.join(' ');
+    };
+
     return (
         <article className="item-card">
-            <h3>{item.name}</h3>
-            <img src={item.sprites.default} alt={item.name} />
+            <h3>{formatName(item.name)}</h3>
+            <img src={item.sprites.default} alt={formatName(item.name)} />
         </article>
     );
 };
