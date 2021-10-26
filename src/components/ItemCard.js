@@ -31,7 +31,7 @@ const ItemCard = (props) => {
         return capitalizedWords.join(' ');
     };
 
-    const [itemQuantity, setItemQuantity] = useState(0);
+    const [itemQuantity, setItemQuantity] = useState();
     const handleQuantityChange = (e) => {
         const quantity = e.target.value;
         if (isNaN(quantity)) {
@@ -41,19 +41,29 @@ const ItemCard = (props) => {
         setItemQuantity(quantity);
     };
 
+    const handleDecrementClick = () => {
+        if (itemQuantity > 0) {
+            setItemQuantity((prevState) => prevState - 1);
+        }
+    };
+
+    const handleIncrementClick = () => {
+        setItemQuantity((prevState) => prevState + 1);
+    };
+
     if (isReadyToRender) {
         return (
             <article className="item-card">
                 <h3>{formatName(item.name)}</h3>
                 <img src={item.sprites.default} alt={formatName(item.name)} />
                 <div>
-                    <DecrementButton />
+                    <DecrementButton handleClick={handleDecrementClick} />
                     <input
                         className="quantity-input"
                         value={itemQuantity}
                         onChange={handleQuantityChange}
                     />
-                    <IncrementButton />
+                    <IncrementButton handleClick={handleIncrementClick} />
                     <AddToCart
                         item={item}
                         quantity={itemQuantity}
@@ -67,12 +77,22 @@ const ItemCard = (props) => {
     }
 };
 
-const DecrementButton = () => {
-    return <button className="decrement">-</button>;
+const DecrementButton = (props) => {
+    const { handleClick } = props;
+    return (
+        <button className="decrement" onClick={handleClick}>
+            -
+        </button>
+    );
 };
 
-const IncrementButton = () => {
-    return <button className="increment">+</button>;
+const IncrementButton = (props) => {
+    const { handleClick } = props;
+    return (
+        <button className="increment" onClick={handleClick}>
+            +
+        </button>
+    );
 };
 
 const AddToCart = (props) => {
