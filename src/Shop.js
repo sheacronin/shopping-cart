@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import bag from './img/bag.png';
+import ItemCard from './ItemCard';
 import './Shop.css';
 
 const Shop = () => {
@@ -20,9 +21,11 @@ const Shop = () => {
         <section id="shop">
             <h1>Shop</h1>
             <CartPreview />
-            {items.map((item) => (
-                <div key={item.name}>{item.name}</div>
-            ))}
+            <div id="item-cards-container">
+                {items.map((item) => (
+                    <ItemCard key={item.name} url={item.url} />
+                ))}
+            </div>
         </section>
     );
 };
