@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './ItemCard.css';
+import '../styles/ItemCard.css';
 
 const ItemCard = (props) => {
     const { url } = props;

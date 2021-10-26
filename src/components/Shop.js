@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import bag from './img/bag.png';
 import ItemCard from './ItemCard';
-import './Shop.css';
+import bag from '../img/bag.png';
+import '../styles/Shop.css';
 
 const Shop = () => {
     useEffect(() => {

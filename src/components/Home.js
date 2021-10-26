@@ -1,4 +1,4 @@
-import pokemart from './img/pokemart.png';
+import pokemart from '../img/pokemart.png';
 
 const Home = () => {
     return (
