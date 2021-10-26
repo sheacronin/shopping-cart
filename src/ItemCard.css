@@ -4,3 +4,12 @@
     padding: 10px;
     min-height: 10vh;
 }
+
+.quantity-input {
+    width: 30%;
+}
+
+.item-card button {
+    width: 15%;
+    height: 15%;
+}
