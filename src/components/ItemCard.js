@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import '../styles/ItemCard.css';
 
 const ItemCard = (props) => {
-    const { url } = props;
+    const { url, numOfThisItemInCart, handleAddToCart } = props;
     const [isReadyToRender, setIsReadyToRender] = useState(false);
 
     useEffect(() => {
@@ -40,7 +40,12 @@ const ItemCard = (props) => {
                     <button className="increment">-</button>
                     <input className="quantity-input"></input>
                     <button className="decrement">+</button>
-                    <button className="add-to-cart">Add to Cart</button>
+                    <button
+                        className="add-to-cart"
+                        onClick={() => handleAddToCart(item)}
+                    >
+                        Add to Cart
+                    </button>
                 </div>
             </article>
         );

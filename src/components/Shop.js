@@ -19,13 +19,28 @@ const Shop = () => {
 
     const [cartItems, setCartItems] = useState([]);
 
+    const handleAddToCart = (item, quantity = 1) => {
+        setCartItems((prevState) => {
+            const newState = [...prevState];
+            for (let n = quantity; n > 0; n--) {
+                newState.push(item);
+            }
+            return newState;
+        });
+        console.log(cartItems);
+    };
+
     return (
         <section id="shop">
             <h1>Shop</h1>
             <CartPreview numOfItemsInCart={cartItems.length} />
             <div id="item-cards-container">
                 {items.map((item) => (
-                    <ItemCard key={item.name} url={item.url} />
+                    <ItemCard
+                        key={item.name}
+                        url={item.url}
+                        handleAddToCart={handleAddToCart}
+                    />
                 ))}
             </div>
         </section>
