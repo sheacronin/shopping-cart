@@ -7,9 +7,40 @@
 
 .quantity-input {
     width: 30%;
+    max-width: 50px;
+    border: none;
+    height: 25px;
+    text-align: center;
 }
 
 .item-card button {
-    width: 15%;
-    height: 15%;
+    border: none;
+}
+
+.item-card button:hover {
+    cursor: pointer;
+}
+
+.increment,
+.decrement {
+    width: 25px;
+    height: 25px;
+    background-color: #5597d4;
+    color: #eeeef7;
+}
+
+.increment {
+    border-radius: 5px 0 0 5px;
+}
+
+.decrement {
+    border-radius: 0 5px 5px 0;
+}
+
+.add-to-cart {
+    background-color: #8697a8;
+    width: calc(30% + 50px);
+    max-width: 100px;
+    padding: 5px 0;
+    border-radius: 5px;
 }

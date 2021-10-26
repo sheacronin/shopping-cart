@@ -37,9 +37,10 @@ const ItemCard = (props) => {
                 <h3>{formatName(item.name)}</h3>
                 <img src={item.sprites.default} alt={formatName(item.name)} />
                 <div>
-                    <button>-</button>
+                    <button className="increment">-</button>
                     <input className="quantity-input"></input>
-                    <button>+</button>
+                    <button className="decrement">+</button>
+                    <button className="add-to-cart">Add to Cart</button>
                 </div>
             </article>
         );
