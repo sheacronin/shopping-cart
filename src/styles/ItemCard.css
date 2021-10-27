@@ -45,6 +45,15 @@
     border-radius: 5px;
 }
 
+.remove-from-cart {
+    background-color: #9f1a21;
+    color: #eeeef7;
+    width: calc(30% + 50px);
+    max-width: 100px;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+
 .item-card .cost {
     display: flex;
     align-items: center;

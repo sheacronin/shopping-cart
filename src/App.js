@@ -8,6 +8,7 @@ import './App.css';
 
 const App = () => {
     const [cartItems, setCartItems] = useState([]);
+
     const handleAddToCart = (item, quantity = 1) => {
         setCartItems((prevState) => {
             const newState = [...prevState];
@@ -17,6 +18,12 @@ const App = () => {
             return newState;
         });
         console.log(cartItems);
+    };
+
+    const handleRemoveFromCart = (item) => {
+        setCartItems((prevState) =>
+            prevState.filter((cartItem) => cartItem !== item)
+        );
     };
 
     return (
@@ -31,7 +38,10 @@ const App = () => {
                     />
                 </Route>
                 <Route exact path="/checkout">
-                    <Checkout cartItems={cartItems} />
+                    <Checkout
+                        cartItems={cartItems}
+                        handleRemoveFromCart={handleRemoveFromCart}
+                    />
                 </Route>
             </Switch>
         </Router>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ItemCard from './ItemCard';
+import { ItemCard } from './ItemCard';
 import bag from '../img/bag.png';
 import '../styles/Shop.css';
 
@@ -29,7 +29,7 @@ const Shop = (props) => {
                     <ItemCard
                         key={item.name}
                         url={item.url}
-                        handleAddToCart={handleAddToCart}
+                        handleCartChange={handleAddToCart}
                     />
                 ))}
             </div>

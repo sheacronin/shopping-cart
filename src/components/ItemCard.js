@@ -2,8 +2,21 @@ import { useEffect, useState } from 'react';
 import '../styles/ItemCard.css';
 import Price from './Price';
 
+const CheckoutItemCard = (props) => {
+    const { handleRemoveFromCart, item, quantity } = props;
+
+    return (
+        <ItemCard
+            isCheckout={true}
+            handleCartChange={handleRemoveFromCart}
+            item={item}
+            quantity={quantity}
+        />
+    );
+};
+
 const ItemCard = (props) => {
-    const { url, handleAddToCart } = props;
+    const { url, handleCartChange, isCheckout } = props;
     const [isReadyToRender, setIsReadyToRender] = useState(false);
 
     const [item, setItem] = useState(props.item);
@@ -89,11 +102,18 @@ const ItemCard = (props) => {
                         onChange={handleQuantityChange}
                     />
                     <IncrementButton handleClick={handleIncrementClick} />
-                    <AddToCart
-                        item={item}
-                        quantity={itemQuantity}
-                        handleAddToCart={handleAddToCart}
-                    />
+                    {isCheckout ? (
+                        <RemoveFromCart
+                            item={item}
+                            handleRemoveFromCart={handleCartChange}
+                        />
+                    ) : (
+                        <AddToCart
+                            item={item}
+                            quantity={itemQuantity}
+                            handleAddToCart={handleCartChange}
+                        />
+                    )}
                 </div>
             </article>
         );
@@ -132,4 +152,17 @@ const AddToCart = (props) => {
     );
 };
 
-export default ItemCard;
+const RemoveFromCart = (props) => {
+    const { item, handleRemoveFromCart } = props;
+
+    return (
+        <button
+            className="remove-from-cart"
+            onClick={() => handleRemoveFromCart(item)}
+        >
+            Remove From Cart
+        </button>
+    );
+};
+
+export { CheckoutItemCard, ItemCard };

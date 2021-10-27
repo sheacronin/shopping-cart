@@ -1,8 +1,8 @@
-import ItemCard from './ItemCard';
+import { CheckoutItemCard } from './ItemCard';
 import Price from './Price';
 
 const Checkout = (props) => {
-    const { cartItems } = props;
+    const { cartItems, handleRemoveFromCart } = props;
 
     const cartItemsSet = [...new Set(cartItems)];
     console.log(cartItemsSet);
@@ -14,7 +14,7 @@ const Checkout = (props) => {
 
     return (
         <section>
-            <h2>Checkout</h2>
+            <h2>Your Cart</h2>
             <Price cost={totalCost} />
 
             {cartItemsSet.map((cartItem) => {
@@ -23,13 +23,16 @@ const Checkout = (props) => {
                 );
 
                 return (
-                    <ItemCard
+                    <CheckoutItemCard
                         key={cartItem.id}
                         item={cartItem}
                         quantity={thisItemInCart.length}
+                        handleRemoveFromCart={handleRemoveFromCart}
                     />
                 );
             })}
+
+            <button>Checkout and Pay</button>
         </section>
     );
 };
