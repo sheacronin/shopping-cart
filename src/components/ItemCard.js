@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import pokedollar from '../img/pokedollar.png';
 import '../styles/ItemCard.css';
 
 const ItemCard = (props) => {
@@ -12,6 +13,7 @@ const ItemCard = (props) => {
             const response = await fetch(url);
             const data = await response.json();
             setItem(data);
+            console.log(data);
             setIsReadyToRender(true);
         };
 
@@ -79,6 +81,10 @@ const ItemCard = (props) => {
             <article className="item-card">
                 <h3>{formatName(item.name)}</h3>
                 <img src={item.sprites.default} alt={formatName(item.name)} />
+                <div className="cost">
+                    <img src={pokedollar} alt="Pokémon Dollar symbol" />
+                    {item.cost}
+                </div>
                 <div>
                     <DecrementButton handleClick={handleDecrementClick} />
                     <input

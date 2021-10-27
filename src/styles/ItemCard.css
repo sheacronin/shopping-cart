@@ -44,3 +44,14 @@
     padding: 5px 0;
     border-radius: 5px;
 }
+
+.cost {
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.cost img {
+    width: 10px;
+}
