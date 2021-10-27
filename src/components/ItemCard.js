@@ -5,6 +5,8 @@ const ItemCard = (props) => {
     const { url, handleAddToCart } = props;
     const [isReadyToRender, setIsReadyToRender] = useState(false);
 
+    const [item, setItem] = useState(props.item);
+
     useEffect(() => {
         const fetchItem = async () => {
             const response = await fetch(url);
@@ -13,10 +15,12 @@ const ItemCard = (props) => {
             setIsReadyToRender(true);
         };
 
-        fetchItem();
-    }, [url]);
-
-    const [item, setItem] = useState({});
+        if (!props.item) {
+            fetchItem();
+        } else {
+            setIsReadyToRender(true);
+        }
+    }, [url, props.item]);
 
     const formatName = (name) => {
         const words = name.split('-');
@@ -31,7 +35,8 @@ const ItemCard = (props) => {
         return capitalizedWords.join(' ');
     };
 
-    const [itemQuantity, setItemQuantity] = useState();
+    const [itemQuantity, setItemQuantity] = useState('');
+
     const handleQuantityChange = (e) => {
         const quantity = e.target.value;
         if (isNaN(quantity)) {
@@ -43,12 +48,24 @@ const ItemCard = (props) => {
 
     const handleDecrementClick = () => {
         if (itemQuantity > 0) {
-            setItemQuantity((prevState) => prevState - 1);
+            setItemQuantity((prevState) => {
+                if (prevState) {
+                    return parseInt(prevState) - 1;
+                } else {
+                    return 0;
+                }
+            });
         }
     };
 
     const handleIncrementClick = () => {
-        setItemQuantity((prevState) => prevState + 1);
+        setItemQuantity((prevState) => {
+            if (prevState) {
+                return parseInt(prevState) + 1;
+            } else {
+                return 1;
+            }
+        });
     };
 
     if (isReadyToRender) {
