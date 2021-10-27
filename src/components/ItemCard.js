@@ -37,6 +37,12 @@ const ItemCard = (props) => {
 
     const [itemQuantity, setItemQuantity] = useState('');
 
+    useEffect(() => {
+        if (props.quantity) {
+            setItemQuantity(props.quantity);
+        }
+    }, [props.quantity]);
+
     const handleQuantityChange = (e) => {
         const quantity = e.target.value;
         if (isNaN(quantity)) {

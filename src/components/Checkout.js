@@ -9,9 +9,19 @@ const Checkout = (props) => {
     return (
         <section>
             <h2>Checkout</h2>
-            {cartItemsSet.map((cartItem) => (
-                <ItemCard key={cartItem.id} item={cartItem} />
-            ))}
+            {cartItemsSet.map((cartItem) => {
+                const thisItemInCart = cartItems.filter(
+                    (item) => item === cartItem
+                );
+
+                return (
+                    <ItemCard
+                        key={cartItem.id}
+                        item={cartItem}
+                        quantity={thisItemInCart.length}
+                    />
+                );
+            })}
         </section>
     );
 };
