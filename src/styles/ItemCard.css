@@ -45,8 +45,7 @@
     border-radius: 5px;
 }
 
-.cost {
-    background-color: aqua;
+.item-card .cost {
     display: flex;
     align-items: center;
     justify-content: flex-end;
