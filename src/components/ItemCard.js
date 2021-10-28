@@ -2,6 +2,35 @@ import { useEffect, useState } from 'react';
 import '../styles/ItemCard.css';
 import Price from './Price';
 
+const CategoryCard = (props) => {
+    const { url } = props;
+    const [isReadyToRender, setIsReadyToRender] = useState(false);
+
+    const [category, setCategory] = useState({});
+
+    useEffect(() => {
+        const fetchItem = async () => {
+            const response = await fetch(url);
+            const data = await response.json();
+            setCategory(data);
+            console.log(data);
+            setIsReadyToRender(true);
+        };
+
+        fetchItem();
+    }, [url]);
+
+    if (isReadyToRender) {
+        return (
+            <article className="item-card">
+                <h3>{category.names[0].name}</h3>
+            </article>
+        );
+    } else {
+        return null;
+    }
+};
+
 const CheckoutItemCard = (props) => {
     const {
         handleRemoveFromCart,
@@ -188,4 +217,4 @@ const RemoveFromCart = (props) => {
     );
 };
 
-export { CheckoutItemCard, ItemCard };
+export { CheckoutItemCard, ItemCard, CategoryCard };

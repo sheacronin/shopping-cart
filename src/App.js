@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Nav from './components/Nav';
 import Home from './components/Home';
-import Shop from './components/Shop';
+import CategoriesShop from './components/Shop';
 import Checkout from './components/Checkout';
 import './App.css';
 
@@ -73,7 +73,7 @@ const App = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/shop">
-                    <Shop
+                    <CategoriesShop
                         numOfItemsInCart={cartItems.length}
                         handleAddToCart={handleAddToCart}
                     />
