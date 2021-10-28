@@ -3,15 +3,38 @@ import '../styles/ItemCard.css';
 import Price from './Price';
 
 const CheckoutItemCard = (props) => {
-    const { handleRemoveFromCart, item, quantity } = props;
+    const {
+        handleRemoveFromCart,
+        item,
+        quantity,
+        handleCheckoutIncrement,
+        handleCheckoutDecrement,
+        handleQuantityChange,
+    } = props;
 
     return (
-        <ItemCard
-            isCheckout={true}
-            handleCartChange={handleRemoveFromCart}
-            item={item}
-            quantity={quantity}
-        />
+        <article className="item-card">
+            <h3>{formatName(item.name)}</h3>
+            <img src={item.sprites.default} alt={formatName(item.name)} />
+            <Price cost={item.cost} />
+            <div>
+                <DecrementButton
+                    handleClick={() => handleCheckoutDecrement(item)}
+                />
+                <input
+                    className="quantity-input"
+                    value={quantity}
+                    onChange={(e) => handleQuantityChange(e, item)}
+                />
+                <IncrementButton
+                    handleClick={() => handleCheckoutIncrement(item)}
+                />
+                <RemoveFromCart
+                    item={item}
+                    handleRemoveFromCart={handleRemoveFromCart}
+                />
+            </div>
+        </article>
     );
 };
 
@@ -35,19 +58,6 @@ const ItemCard = (props) => {
             setIsReadyToRender(true);
         }
     }, [url, props.item]);
-
-    const formatName = (name) => {
-        const words = name.split('-');
-        const capitalizedWords = [];
-
-        words.forEach((word) => {
-            let capitalizedWord = word[0].toUpperCase();
-            capitalizedWord += word.slice(1);
-            capitalizedWords.push(capitalizedWord);
-        });
-
-        return capitalizedWords.join(' ');
-    };
 
     const [itemQuantity, setItemQuantity] = useState('');
 
@@ -120,6 +130,19 @@ const ItemCard = (props) => {
     } else {
         return null;
     }
+};
+
+const formatName = (name) => {
+    const words = name.split('-');
+    const capitalizedWords = [];
+
+    words.forEach((word) => {
+        let capitalizedWord = word[0].toUpperCase();
+        capitalizedWord += word.slice(1);
+        capitalizedWords.push(capitalizedWord);
+    });
+
+    return capitalizedWords.join(' ');
 };
 
 const DecrementButton = (props) => {

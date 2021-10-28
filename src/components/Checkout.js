@@ -2,7 +2,13 @@ import { CheckoutItemCard } from './ItemCard';
 import Price from './Price';
 
 const Checkout = (props) => {
-    const { cartItems, handleRemoveFromCart } = props;
+    const {
+        cartItems,
+        handleRemoveFromCart,
+        handleCheckoutIncrement,
+        handleCheckoutDecrement,
+        handleQuantityChange,
+    } = props;
 
     const cartItemsSet = [...new Set(cartItems)];
     console.log(cartItemsSet);
@@ -28,6 +34,9 @@ const Checkout = (props) => {
                         item={cartItem}
                         quantity={thisItemInCart.length}
                         handleRemoveFromCart={handleRemoveFromCart}
+                        handleCheckoutDecrement={handleCheckoutDecrement}
+                        handleCheckoutIncrement={handleCheckoutIncrement}
+                        handleQuantityChange={handleQuantityChange}
                     />
                 );
             })}
