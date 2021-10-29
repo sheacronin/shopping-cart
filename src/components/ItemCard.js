@@ -13,7 +13,6 @@ const CategoryCard = (props) => {
             const response = await fetch(url);
             const data = await response.json();
             setCategory(data);
-            console.log(data);
             setIsReadyToRender(true);
         };
 
