@@ -1,6 +1,7 @@
 import { useParams } from 'react-router';
 import { ItemCard } from './ItemCard';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ShopCategory = (props) => {
     const { handleAddToCart } = props;
@@ -22,14 +23,19 @@ const ShopCategory = (props) => {
     const [items, setItems] = useState([]);
 
     return (
-        <div id="item-cards-container">
-            {items.map((item) => (
-                <ItemCard
-                    key={item.name}
-                    url={item.url}
-                    handleCartChange={handleAddToCart}
-                />
-            ))}
+        <div>
+            <Link to="/shop" className="back-btn-link">
+                <button className="back-btn">← Back</button>
+            </Link>
+            <div id="item-cards-container">
+                {items.map((item) => (
+                    <ItemCard
+                        key={item.name}
+                        url={item.url}
+                        handleCartChange={handleAddToCart}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
