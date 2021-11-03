@@ -1,5 +1,6 @@
 import { CheckoutItemCard } from './ItemCard';
 import Price from './Price';
+import '../styles/Checkout.css';
 
 const Checkout = (props) => {
     const {
@@ -20,28 +21,36 @@ const Checkout = (props) => {
 
     return (
         <section>
-            <h2>Your Cart</h2>
-            <Price cost={totalCost} />
+            <div className="section-title">
+                <h2>YOUR CART</h2>
+            </div>
+            <div id="total-cost">
+                <strong>Total Cost:</strong> <Price cost={totalCost} />
+            </div>
 
-            {cartItemsSet.map((cartItem) => {
-                const thisItemInCart = cartItems.filter(
-                    (item) => item === cartItem
-                );
+            <div id="cart-items-container">
+                {cartItemsSet.map((cartItem) => {
+                    const thisItemInCart = cartItems.filter(
+                        (item) => item === cartItem
+                    );
 
-                return (
-                    <CheckoutItemCard
-                        key={cartItem.id}
-                        item={cartItem}
-                        quantity={thisItemInCart.length}
-                        handleRemoveFromCart={handleRemoveFromCart}
-                        handleCheckoutDecrement={handleCheckoutDecrement}
-                        handleCheckoutIncrement={handleCheckoutIncrement}
-                        handleQuantityChange={handleQuantityChange}
-                    />
-                );
-            })}
+                    return (
+                        <CheckoutItemCard
+                            key={cartItem.id}
+                            item={cartItem}
+                            quantity={thisItemInCart.length}
+                            handleRemoveFromCart={handleRemoveFromCart}
+                            handleCheckoutDecrement={handleCheckoutDecrement}
+                            handleCheckoutIncrement={handleCheckoutIncrement}
+                            handleQuantityChange={handleQuantityChange}
+                        />
+                    );
+                })}
+            </div>
 
-            <button>Checkout and Pay</button>
+            <div id="checkout-and-pay-container">
+                <button id="checkout-and-pay">Checkout and Pay</button>
+            </div>
         </section>
     );
 };

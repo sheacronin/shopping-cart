@@ -21,7 +21,7 @@ const CategoryCard = (props) => {
 
     if (isReadyToRender) {
         return (
-            <article className="item-card">
+            <article className="card category-card">
                 <h3>{category.names[0].name}</h3>
             </article>
         );
@@ -41,7 +41,7 @@ const CheckoutItemCard = (props) => {
     } = props;
 
     return (
-        <article className="item-card">
+        <article className="card item-card">
             <h3>{formatName(item.name)}</h3>
             <img src={item.sprites.default} alt={formatName(item.name)} />
             <Price cost={item.cost} />
@@ -128,7 +128,7 @@ const ItemCard = (props) => {
 
     if (isReadyToRender) {
         return (
-            <article className="item-card">
+            <article className="card item-card">
                 <h3>{formatName(item.name)}</h3>
                 <img src={item.sprites.default} alt={formatName(item.name)} />
                 <Price cost={item.cost} />

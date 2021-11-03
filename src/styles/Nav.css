@@ -19,4 +19,10 @@ nav a {
     text-decoration: none;
     color: #333a5b;
     font-size: 1.5em;
+    transition: text-shadow 200ms ease-in-out;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 10px #ffffff;
 }

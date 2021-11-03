@@ -35,7 +35,9 @@ const Shop = (props) => {
 
     return (
         <section id="shop">
-            <h1>Shop</h1>
+            <div className="section-title">
+                <h2>SHOP</h2>
+            </div>
             <CartPreview numOfItemsInCart={numOfItemsInCart} />
             <Switch>
                 <Route exact path={match.path}>
@@ -44,6 +46,7 @@ const Shop = (props) => {
                             <Link
                                 to={`${match.path}/${category.name}`}
                                 key={category.name}
+                                className="category-link"
                             >
                                 <CategoryCard url={category.url} />
                             </Link>

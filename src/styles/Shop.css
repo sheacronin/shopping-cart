@@ -1,12 +1,17 @@
 #shop {
     position: relative;
-    height: 2000px;
 }
 
 #cart-preview {
     position: fixed;
-    top: 12vh;
+    top: 11vh;
     right: 20px;
+    background-color: #c2d4e5;
+    box-shadow: 0 0 15px 20px #c2d4e5;
+}
+
+#cart-preview a {
+    text-decoration: none;
 }
 
 #num-of-items {
@@ -44,5 +49,25 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
-    margin: 10vh 10px 0 10px;
+    margin: 6vh 10px 6vh 10px;
+}
+
+@media (max-width: 400px) {
+    #item-cards-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.category-link {
+    text-decoration: none;
+    color: #c2453d;
+    transition: color 200ms ease-in-out;
+}
+
+.category-link:hover {
+    color: #f7c27e;
+}
+
+.category-link:hover .category-card {
+    background-color: #8697a8;
 }

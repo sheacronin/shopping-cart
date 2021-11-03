@@ -1,0 +1,44 @@
+.section-title {
+    margin-bottom: 3vh;
+}
+
+#total-cost {
+    margin-bottom: 3vh;
+}
+
+#total-cost .cost {
+    display: inline;
+}
+
+#cart-items-container {
+    margin-bottom: 20vh;
+}
+
+#cart-items-container .item-card {
+    margin: 10px;
+    max-width: 400px;
+}
+
+#checkout-and-pay-container {
+    background-color: #8fcbf6;
+    box-shadow: 0 0 20px 30px #8fcbf6;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
+
+#checkout-and-pay {
+    background-color: #3d75b9;
+    border: none;
+    color: #eeeef7;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 300ms;
+    margin-bottom: 20px;
+}
+
+#checkout-and-pay:hover {
+    cursor: pointer;
+    background-color: #275597;
+    font-weight: 800;
+}
