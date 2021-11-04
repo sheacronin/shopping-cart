@@ -8,7 +8,7 @@ const CartPreview = (props) => {
         <div id="cart-preview">
             <img src={bag} alt="A bag" />
             <div id="num-of-items">{numOfItemsInCart}</div>
-            <Link to="/checkout">
+            <Link to="/shopping-cart/checkout">
                 <button id="checkout-btn">Checkout</button>
             </Link>
         </div>

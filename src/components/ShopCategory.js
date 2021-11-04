@@ -23,7 +23,7 @@ const ShopCategory = (props) => {
 
     return (
         <div>
-            <Link to="/shop" className="back-btn-link">
+            <Link to="/shopping-cart/shop" className="back-btn-link">
                 <button className="back-btn">← Back</button>
             </Link>
             <div id="item-cards-container">

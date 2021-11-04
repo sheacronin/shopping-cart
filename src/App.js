@@ -70,14 +70,14 @@ const App = () => {
         <Router>
             <Nav />
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/shop">
+                <Route exact path="/shopping-cart/" component={Home} />
+                <Route path="/shopping-cart/shop">
                     <Shop
                         numOfItemsInCart={cartItems.length}
                         handleAddToCart={handleAddToCart}
                     />
                 </Route>
-                <Route exact path="/checkout">
+                <Route exact path="/shopping-cart/checkout">
                     <Checkout
                         cartItems={cartItems}
                         handleRemoveFromCart={handleRemoveFromCart}
