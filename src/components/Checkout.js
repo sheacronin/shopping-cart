@@ -12,7 +12,6 @@ const Checkout = (props) => {
     } = props;
 
     const cartItemsSet = [...new Set(cartItems)];
-    console.log(cartItemsSet);
 
     let totalCost = 0;
     cartItems.forEach((item) => {

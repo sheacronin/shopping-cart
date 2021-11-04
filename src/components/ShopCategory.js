@@ -13,7 +13,6 @@ const ShopCategory = (props) => {
                 `https://pokeapi.co/api/v2/item-category/${category}`
             );
             const data = await response.json();
-            console.log(data);
             setItems(data.items);
         };
 

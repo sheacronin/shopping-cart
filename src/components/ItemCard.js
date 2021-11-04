@@ -76,6 +76,12 @@ const ItemCard = (props) => {
         const fetchItem = async () => {
             const response = await fetch(url);
             const data = await response.json();
+
+            // Don't display items with 0 cost
+            if (data.cost === 0) {
+                return;
+            }
+
             setItem(data);
             setIsReadyToRender(true);
         };

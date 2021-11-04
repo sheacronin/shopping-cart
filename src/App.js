@@ -58,7 +58,6 @@ const App = () => {
             }
             return newState;
         });
-        console.log(cartItems);
     };
 
     const handleRemoveFromCart = (item) => {
