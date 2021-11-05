@@ -17,12 +17,12 @@ button {
 section {
     margin-top: 10vh;
     height: 90vh;
-    background: linear-gradient(transparent, #8fcbf7);
+    background: linear-gradient(#c2d4e5, #8fcbf7);
     overflow-y: scroll;
 }
 
 .section-title {
-    background: linear-gradient(90deg, #eeeef7, transparent 80%);
+    background: linear-gradient(90deg, #eeeef7, #c2d4e5 80%);
 }
 
 .section-title h2 {
