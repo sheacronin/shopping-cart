@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Nav from './components/Nav';
 import Home from './components/Home';
@@ -70,14 +70,14 @@ const App = () => {
         <Router>
             <Nav />
             <Switch>
-                <Route exact path="/shopping-cart/" component={Home} />
-                <Route path="/shopping-cart/shop">
+                <Route exact path="/" component={Home} />
+                <Route path="/shop">
                     <Shop
                         numOfItemsInCart={cartItems.length}
                         handleAddToCart={handleAddToCart}
                     />
                 </Route>
-                <Route exact path="/shopping-cart/checkout">
+                <Route exact path="/checkout">
                     <Checkout
                         cartItems={cartItems}
                         handleRemoveFromCart={handleRemoveFromCart}
